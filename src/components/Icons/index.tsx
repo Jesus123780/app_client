@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { View, Text } from 'react-native'
-import { IconHome, IconProps } from '../../assets/icons'
+import { IconHome, IconLogo, IconProfile, IconProps, IconSearch, IconSettings, IconShopping } from '../../assets/icons'
 
 interface IconMap {
   [key: string]: FC<IconProps>
@@ -12,6 +12,11 @@ interface IconPropsComponent extends IconProps {
 
 const Icons: IconMap = {
   home: IconHome,
+  search: IconSearch,
+  profile: IconProfile,
+  settings: IconSettings,
+  logo: IconLogo,
+  shopping: IconShopping,
 }
 
 const GetIcon = (key: string): FC<IconProps> | null => {
