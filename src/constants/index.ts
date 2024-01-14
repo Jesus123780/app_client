@@ -7,3 +7,5 @@ export const ROUTES = Object.freeze({
     EXPLORE: 'Explore',
     RESETPASSWORD: 'ResetPassword',
 })
+
+export const SESSION_NAME = 'SESSION'

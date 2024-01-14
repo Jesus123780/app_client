@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { ApolloProvider, client } from './apollo'
 import { Navigation } from './src/navigation/ButtonTabs'
 import Context from './src/context'
+import { AlertBox } from './src/components/atoms'
 
 
 function App(): React.JSX.Element {
@@ -13,6 +14,7 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   }
+  
   return (
     <Context>
       <ApolloProvider client={client}>
@@ -22,6 +24,7 @@ function App(): React.JSX.Element {
             backgroundColor={backgroundStyle.backgroundColor}
           />
           <Navigation />
+          <AlertBox type={1} title="Éxito" />
         </NavigationContainer>
       </ApolloProvider>
     </Context>
