@@ -1,14 +1,23 @@
-import * as React from 'react';
-import {  StyleSheet } from 'react-native';
+import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Register, Login, ResetPassword } from '../screen';
+import { 
+  Register, 
+  Login, 
+  ResetPassword 
+} from '../screen';
 import { colors } from '../assets/colors';
+import { ROUTES } from '../constants';
 
 const Stack = createNativeStackNavigator();
 
 export const PublicScreen = () => {
+  
+  const options = {
+      headerShown: false
+  }
   return (
     <Stack.Navigator
+      initialRouteName={ROUTES.LOGIN}
       screenOptions={{
         headerTitleAlign: 'center',
         headerStyle: {
@@ -17,33 +26,20 @@ export const PublicScreen = () => {
       }}
     >
       <Stack.Screen
-        name="Register"
+        name={ROUTES.REGISTER}
         component={Register}
-        options={{
-         headerShown: false
-        }}
+        options={options}
       />
       <Stack.Screen 
-        name="Login"
+        name={ROUTES.LOGIN}
         component={Login} 
-        options={{
-          headerShown: false,
-        }}
+        options={options}
       />
       <Stack.Screen 
-        name="ResetPassword"
+        name={ROUTES.RESETPASSWORD}
         component={ResetPassword} 
-        options={{
-          headerShown: false,
-        }}
+        options={options}
       />
     </Stack.Navigator>
   );
 };
-
-const styles = StyleSheet.create({
-  logo: {
-    width: 50,
-    height: 55
-  },
-})

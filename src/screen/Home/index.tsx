@@ -1,10 +1,17 @@
-import React from 'react'
-import { SafeAreaView, Text, View, TouchableOpacity } from 'react-native'
+import React, { useContext } from 'react'
+import { 
+  SafeAreaView, 
+  Text,
+  View, 
+  TouchableOpacity
+} from 'react-native'
+import { Context, ContextProps } from '../../context'
 
-export const Home = ({ navigation }) => {
+export const Home = () => {
+  const { setLogin } = useContext(Context) as ContextProps
 
   const handleRoute = () => {
-    navigation.navigate('Login')
+    setLogin(false)
   }
 
   return (
