@@ -1,16 +1,16 @@
-import React, { useContext } from 'react';
-import { Home } from '../screen';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import React, { useContext } from 'react';
 import { StackNavigator } from '.';
-import { Icon } from '../components';
 import { colors } from '../assets/colors';
-import { Context, ContextProps } from '../context';
+import { Icon } from '../components';
 import { ROUTES } from '../constants';
+import { Context, ContextProps } from '../context';
+import { Home } from '../screen';
 import { PublicScreen } from './PublicTabs';
 
 const Tab = createBottomTabNavigator();
 
-export const Navigation = () => {
+export const Navigation = () => { 
   const { login } = useContext(Context) as ContextProps
   if (!login) return <PublicScreen /> 
   return (

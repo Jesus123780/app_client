@@ -1,4 +1,3 @@
-// eslint-disable-next-line
 const { readdirSync, readFileSync, writeFileSync } = require('fs')
 
 function setNewAtoms() {

@@ -10,15 +10,15 @@ import { Alert } from 'react-native'
  */
 export const getData = async (key: string, keyParse?: boolean): Promise<any | null> => {
     try {
-        const jsonValue = await AsyncStorage.getItem(key);
+        const jsonValue = await AsyncStorage.getItem(key)
         const dataParse = (jsonValue ? JSON.parse(jsonValue) : null)
-        return keyParse ? dataParse : jsonValue;
+        return keyParse ? dataParse : jsonValue
     } catch (error) {
-        console.error("Error al obtener datos:", error);
-        Alert.alert('Error', 'Ha ocurrido un error al obtener datos. Por favor, inténtelo más tarde.');
-        return null;
+        console.error('Error al obtener datos:', error)
+        Alert.alert('Error', 'Ha ocurrido un error al obtener datos. Por favor, inténtelo más tarde.')
+        return null
     }
-};
+}
 
 /**
  * Guarda en AsyncStorage la información.
@@ -30,13 +30,13 @@ export const getData = async (key: string, keyParse?: boolean): Promise<any | nu
  */
 export const setData = async (key: string, value: any, keyParse?: boolean): Promise<void> => {
     try {
-        const jsonValue = keyParse ? JSON.stringify(value) : value;
-        await AsyncStorage.setItem(key, jsonValue);
+        const jsonValue = keyParse ? JSON.stringify(value) : value
+        await AsyncStorage.setItem(key, jsonValue)
     } catch (error) {
-        console.error("Error al guardar datos:", error);
-        Alert.alert('Error', 'Ha ocurrido un error al guardar datos. Por favor, inténtelo más tarde.');
+        console.error('Error al guardar datos:', error)
+        Alert.alert('Error', 'Ha ocurrido un error al guardar datos. Por favor, inténtelo más tarde.')
     }
-};
+}
 
 /**
  * elimina en AsyncStorage la información
